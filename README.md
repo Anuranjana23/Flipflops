@@ -43,15 +43,79 @@ In T flip flop, "T" defines the term "Toggle". In SR Flip Flop, we provide only 
 
 
 ## Program:
+~~~
+SR-Flipflop
+module exp5a(s,r,clk,q,qbar);
+input s,r,clk;
+output reg q;
+output qbar;
+always@(posedge clk)
+begin
+q=s|((~r)&q);
+end
+assign qbar=~q;
+endmodule
 
+D-Flipflop
+module exp5b(d,clk,q,qbar);
+input d,clk;
+output reg q;
+output qbar;
+always@(posedge clk)
+begin
+q=((~q)&d)|(q&d);
+end
+assign qbar=~q;
+endmodule
+
+JK-Flipflop
+module exp5c(j,k,clk,q,qbar);
+input j,k,clk;
+output reg q;
+output qbar;
+always@(posedge clk)
+begin
+q=((~q)&j)|(q&(~k));
+end
+assign qbar=~q;
+endmodule
+
+T-Flipflop
+module exp5d(t,clk,q,qbar);
+input t,clk;
+output reg q;
+output qbar;
+always@(posedge clk)
+begin
+q=((~q)&t)|(q&(~t));
+end
+assign qbar=~q;
+endmodule
+~~~
 
 ## RTL Schematic:
+SR Flipfliop
+![RTL](https://github.com/Anuranjana23/Flipflops/assets/134050204/99b8b183-7abc-4c1c-845c-7e1eef20753f)
+D Flipflop
+![RTL](https://github.com/Anuranjana23/Flipflops/assets/134050204/0e8f902a-a09d-4c54-9a69-9e21057e30f3)
+JK Flipflop
+![RTL](https://github.com/Anuranjana23/Flipflops/assets/134050204/06bc9278-0394-40bf-8d8c-4e085d1bedd4)
+T Flipflop
+![RTL](https://github.com/Anuranjana23/Flipflops/assets/134050204/c7b48d54-fd23-4e52-b13e-d6928376d7eb)
+
 
 
 
 
 ## Timing Diagram:
-
+SR Flipflop
+![Timing Diagram](https://github.com/Anuranjana23/Flipflops/assets/134050204/6db9eb63-423c-413a-a3f8-6dac040ed8f1)
+D Flipflop
+![Timing diagram](https://github.com/Anuranjana23/Flipflops/assets/134050204/f5367dbb-4a49-4f96-a807-05e2dac7daf7)
+JK Flipflop
+![Timing Diagram](https://github.com/Anuranjana23/Flipflops/assets/134050204/e670db0f-ca85-4189-829e-c829a1231c06)
+T Flipflop
+![Timing Diagram](https://github.com/Anuranjana23/Flipflops/assets/134050204/cccdccd4-0de4-4f21-ac1f-67ff58d2caff)
 
 
 ## Result:
